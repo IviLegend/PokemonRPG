@@ -1,4 +1,4 @@
-package tercertrimestre.pokemonmejorado.data;
+package data;
 
 public enum Nature
 {

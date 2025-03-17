@@ -1,6 +1,4 @@
-package tercertrimestre.pokemonmejorado;
-
-import tercertrimestre.pokemonmejorado.data.Nature;
+import data.Nature;
 
 public class Pokemon implements PokemonData
 {

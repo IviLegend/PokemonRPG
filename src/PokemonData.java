@@ -1,6 +1,4 @@
-package tercertrimestre.pokemonmejorado;
-
-import tercertrimestre.pokemonmejorado.data.Type;
+import data.Type;
 
 public interface PokemonData
 {

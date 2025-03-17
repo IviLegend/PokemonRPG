@@ -1,4 +1,3 @@
-package tercertrimestre.pokemonmejorado;
 
 import java.util.Random;
 
