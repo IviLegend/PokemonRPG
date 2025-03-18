@@ -1,11 +1,13 @@
 import data.Nature;
+import data.PokemonData;
+import items.Item;
 
 /**
  * The Pokemon class is used for every individual pokémon.
  * There can be multiple pokémon of one type, like two Pikachus,
  * but the data for Pikachu is always the same.
  *
- * Check PokemonData to see the data of every pokémon.
+ * Check data.PokemonData to see the data of every pokémon.
  */
 public class Pokemon
 {
@@ -15,6 +17,9 @@ public class Pokemon
     private int level = 1;
 
     private Nature nature;
+
+    public Item equipedItem;
+    public int captureRatio;
 
     private int healthPoints = calculateHealthPoints();
     private int attack = calculateOtherStat(1);

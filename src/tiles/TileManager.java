@@ -44,9 +44,9 @@ public class TileManager
         {
             for (int j = 0; j < gamePanel.maxScreenRow; j++)
             {
-                if (i == 0)
+                if (j == 0)
                 {
-                    graphics2D.drawImage(tiles[1].image, (i * 48), (j * 48), gamePanel.tileSize, gamePanel.tileSize, null);
+                    graphics2D.drawImage(tiles[1].image, (i * 48), (0), gamePanel.tileSize, gamePanel.tileSize, null);
                 }
                 else
                 {
