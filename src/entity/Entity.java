@@ -1,0 +1,10 @@
+package entity;
+
+/**
+ * The Entity class is used for the Player and every NPC in the game.
+ */
+public class Entity
+{
+    public int x, y;
+    public int speed;
+}

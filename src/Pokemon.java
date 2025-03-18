@@ -1,13 +1,20 @@
 import data.Nature;
 
-public class Pokemon implements PokemonData
+/**
+ * The Pokemon class is used for every individual pokémon.
+ * There can be multiple pokémon of one type, like two Pikachus,
+ * but the data for Pikachu is always the same.
+ *
+ * Check PokemonData to see the data of every pokémon.
+ */
+public class Pokemon
 {
     /// FIELDS
     public PokemonData pokemonData;
-    private String name = PokemonData.name;
+    private String name = pokemonData.name;
     private int level = 1;
 
-    private Nature nature = selectRandomNature();
+    private Nature nature;
 
     private int healthPoints = calculateHealthPoints();
     private int attack = calculateOtherStat(1);
@@ -36,23 +43,55 @@ public class Pokemon implements PokemonData
 
     private int[] evList = {evHealthPoints, evAttack, evDefense, evSpecialAttack, evSpecialDefense, evSpeed};
 
-    public Pokemon(PokemonData pokemonData, String name, int level, Nature nature)
+    /// CONSTRUCTORS
+    // Wild pokémons
+    public Pokemon(PokemonData pokemonData, int level)
     {
         this.pokemonData = pokemonData;
-        this.name = name;
+        this.level = level;
+        this.nature = selectRandomNature();
+    }
+
+    // Trainer pokémons
+    public Pokemon(PokemonData pokemonData, int level, Nature nature, int ivHealthPoints, int ivAttack, int ivDefense, int ivSpecialAttack, int ivSpecialDefense, int ivSpeed, int evHealthPoints, int evDefense, int evSpecialAttack, int evAttack, int evSpecialDefense, int evSpeed)
+    {
+        this.pokemonData = pokemonData;
         this.level = level;
         this.nature = nature;
+
+        this.ivHealthPoints = ivHealthPoints;
+        this.ivAttack = ivAttack;
+        this.ivDefense = ivDefense;
+        this.ivSpecialAttack = ivSpecialAttack;
+        this.ivSpecialDefense = ivSpecialDefense;
+        this.ivSpeed = ivSpeed;
+
+        this.evHealthPoints = evHealthPoints;
+        this.evDefense = evDefense;
+        this.evSpecialAttack = evSpecialAttack;
+        this.evAttack = evAttack;
+        this.evSpecialDefense = evSpecialDefense;
+        this.evSpeed = evSpeed;
     }
+
 
     /// METHODS
+    /**
+     * @return The health points for each level.
+     */
     private int calculateHealthPoints()
     {
-        return ((((2 * initialHealthPoints) + ivHealthPoints + (evHealthPoints / 4)) * level) / 100) + level + 10;
+        return ((((2 * pokemonData.initialHealthPoints) + ivHealthPoints + (evHealthPoints / 4)) * level) / 100) + level + 10;
     }
 
+    /**
+     * @param statIndex - The index of the stat that will be calculated.
+     * @return The stat for each level.
+     */
     private int calculateOtherStat(int statIndex)
     {
-        return (int)((((((2 * initialHealthPoints) + ivHealthPoints + (evHealthPoints / 4)) * level) / 100) + 5) * calculateNatureBonus(statIndex));
+        // TODO: Arreglar que haya initial Health Points, debería estar cada atributo.
+        return (int)((((double) (((2 * pokemonData.initialHealthPoints) + ivHealthPoints + (evHealthPoints / 4)) * level) / 100) + 5) * calculateNatureBonus(statIndex));
     }
 
     private void levelUp()

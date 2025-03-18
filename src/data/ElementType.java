@@ -1,6 +1,10 @@
 package data;
 
-public enum Type
+/**
+ * The ElementType enum stores every element or type
+ * that either pokémons or attack can have.
+ */
+public enum ElementType
 {
     NORMAL,
     FIRE,

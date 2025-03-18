@@ -1,8 +1,15 @@
 package main;
 
+import entity.Player;
+
 import javax.swing.JPanel;
 import java.awt.*;
 
+/**
+ * The class GamePanel contains all the screen information.
+ * This class manages the Game Loop, which updates and
+ * redraws the screen every frame.
+ */
 public class GamePanel extends JPanel implements Runnable
 {
     /// FIELDS
@@ -18,13 +25,15 @@ public class GamePanel extends JPanel implements Runnable
     final int screenWidth = tileSize * maxScreenCol;
     final int screenHeight = tileSize * maxScreenRow;
 
+    // Game controlers
     KeyHandler keyHandler = new KeyHandler();
     Thread gameThread;
 
     // Frames values
     int FPS = 60;
 
-    // Player variables
+    // Player values
+    Player player = new Player(this, keyHandler);
     int playerX = 100;
     int playerY = 100;
     int playerSpeed = 4;
@@ -80,22 +89,8 @@ public class GamePanel extends JPanel implements Runnable
 
     public void update()
     {
-        if (keyHandler.upPressed)
-        {
-            playerY -= playerSpeed;
-        }
-        if (keyHandler.downPressed)
-        {
-            playerY += playerSpeed;
-        }
-        if (keyHandler.rightPressed)
-        {
-            playerX += playerSpeed;
-        }
-        if (keyHandler.leftPressed)
-        {
-            playerX -= playerSpeed;
-        }
+        player.update();
+
     }
 
     public void paintComponent(Graphics graphics)
@@ -104,8 +99,8 @@ public class GamePanel extends JPanel implements Runnable
 
         Graphics2D graphics2D = (Graphics2D) graphics;
 
-        graphics2D.setColor(Color.white);
-        graphics2D.fillRect(playerX, playerY, tileSize, tileSize);
+        player.draw();
+
         graphics2D.dispose();
     }
 }

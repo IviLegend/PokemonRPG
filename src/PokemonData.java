@@ -1,14 +1,17 @@
-import data.Type;
+import data.ElementType;
 
-public interface PokemonData
+/**
+ * The PokemonData interface stores all the information for every Pokemon.
+ */
+public class PokemonData
 {
     /// FIELDS
     // General fields
     int pokemonNumber = 0;
     String name = "Missingno";
 
-    Type principalType = null;
-    Type secondaryType = null;
+    ElementType principalType = null;
+    ElementType secondaryType = null;
 
 //    double weigth = 0; // Expressed in KG
 //    double height = 0; // Expressed in M

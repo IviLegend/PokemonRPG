@@ -3,6 +3,9 @@ package main;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * The class KeyHandler manages everything related to inputs.
+ */
 public class KeyHandler implements KeyListener
 {
     /// FIELDS

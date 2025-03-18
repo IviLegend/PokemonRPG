@@ -1,6 +1,9 @@
 
 import java.util.Random;
 
+/**
+ * The Utils class contains some useful static methods.
+ */
 public class Utils
 {
     public static int generateRandomNumber(int min, int max)
