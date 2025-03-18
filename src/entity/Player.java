@@ -36,14 +36,17 @@ public class Player extends Entity
         direction = "Down";
     }
 
+    /**
+     * Load all player sprites.
+     */
     public void getPlayerImage()
     {
         try
         {
-            sprUp1 = ImageIO.read(getClass().getResourceAsStream("/player/sprPlayerUp.png"));
-            sprDown1 = ImageIO.read(getClass().getResourceAsStream("/player/sprPlayerDown.png"));
-            sprRight1 = ImageIO.read(getClass().getResourceAsStream("/player/sprPlayerRight.png"));
-            sprLeft1 = ImageIO.read(getClass().getResourceAsStream("/player/sprPlayerLeft.png"));
+            sprUp1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/sprPlayerUp.png"));
+            sprDown1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/sprPlayerDown.png"));
+            sprRight1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/sprPlayerRight.png"));
+            sprLeft1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/sprPlayerLeft.png"));
         }
         catch (IOException e)
         {
