@@ -1,5 +1,8 @@
 package data;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
 /**
  * The PokemonData interface stores all the information for every entity.Pokemon.
  */
@@ -20,6 +23,20 @@ public class PokemonData
     double height = 0; // Expressed in M
 
     public double malePercentage;
+
+    public int cycles;
+
+    // Image fields
+    public BufferedImage iconImage;
+    public BufferedImage frontImage;
+    public BufferedImage frontImageShiny;
+    public BufferedImage backImage;
+    public BufferedImage backImageShiny;
+
+    public BufferedImage footprint;
+    public BufferedImage silhouette;
+
+    public ColorList color;
 
     // Hability Fields
 //    private Hability hability;
