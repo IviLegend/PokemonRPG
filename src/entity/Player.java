@@ -44,7 +44,7 @@ public class Player extends Entity
         try
         {
             sprUp1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/sprPlayerUp.png"));
-            sprDown1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/sprPlayerDown.png"));
+            sprDown1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/sprHildaRunDown1.png"));
             sprRight1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/sprPlayerRight.png"));
             sprLeft1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/sprPlayerLeft.png"));
         }

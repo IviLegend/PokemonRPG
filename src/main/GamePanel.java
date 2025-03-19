@@ -15,13 +15,13 @@ public class GamePanel extends JPanel implements Runnable
 {
     /// FIELDS
     // Screen Settings
-    final int originalTileSize = 16;
+    final int originalTileSize = 32;
     final int scale = 3;
 
     public final int tileSize = originalTileSize * scale;
 
-    public final int maxScreenCol = 16;
-    public final int maxScreenRow = 12;
+    public final int maxScreenCol = 12;
+    public final int maxScreenRow = 8;
 
     public final int screenWidth = tileSize * maxScreenCol;
     public final int screenHeight = tileSize * maxScreenRow;
@@ -58,7 +58,7 @@ public class GamePanel extends JPanel implements Runnable
     @Override
     public void run()
     {
-        double drawInterval = 1000000000 / FPS;
+        double drawInterval = (double) 1000000000 / FPS;
         double delta = 0;
         long lastTime = System.nanoTime();
         long currentTime;

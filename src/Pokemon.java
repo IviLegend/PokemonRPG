@@ -105,12 +105,17 @@ public class Pokemon
     private boolean isShiny()
     {
         // TODO: Test if shinys work correctly when Pokemon Encounters are done
-        return Utils.generateRandomNumber(1, 4096) == 1;
+        return Utils.generateRandomNumber(1, Constants.SHINY_RATIO_STANDARD) == 1;
     }
 
     private void levelUp()
     {
         level++;
+        calculateAtributes();
+    }
+
+    private void calculateAtributes()
+    {
         healthPoints = calculateHealthPoints();
         attack = calculateOtherStat(1);
         defense = calculateOtherStat(2);
