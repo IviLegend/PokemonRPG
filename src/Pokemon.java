@@ -21,6 +21,8 @@ public class Pokemon
     public Item equipedItem;
     public int captureRatio;
 
+    public boolean shiny;
+
     private int healthPoints = calculateHealthPoints();
     private int attack = calculateOtherStat(1);
     private int defense = calculateOtherStat(2);
@@ -55,6 +57,7 @@ public class Pokemon
         this.pokemonData = pokemonData;
         this.level = level;
         this.nature = selectRandomNature();
+        this.shiny = isShiny();
     }
 
     // Trainer pokémons
@@ -90,13 +93,19 @@ public class Pokemon
     }
 
     /**
-     * @param statIndex - The index of the stat that will be calculated.
+     * @param statIndex The index of the stat that will be calculated.
      * @return The stat for each level.
      */
     private int calculateOtherStat(int statIndex)
     {
         // TODO: Arreglar que haya initial Health Points, debería estar cada atributo.
         return (int)((((double) (((2 * pokemonData.initialHealthPoints) + ivHealthPoints + (evHealthPoints / 4)) * level) / 100) + 5) * calculateNatureBonus(statIndex));
+    }
+
+    private boolean isShiny()
+    {
+        // TODO: Test if shinys work correctly when Pokemon Encounters are done
+        return Utils.generateRandomNumber(1, 4096) == 1;
     }
 
     private void levelUp()
