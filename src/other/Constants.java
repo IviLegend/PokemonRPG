@@ -1,6 +1,7 @@
+package other;
 
 /**
- * The class Constants stores the constant values the game will be using.
+ * The class other.Constants stores the constant values the game will be using.
  */
 public class Constants
 {

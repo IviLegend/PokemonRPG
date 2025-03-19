@@ -1,9 +1,13 @@
+package entity;
+
 import data.Nature;
 import data.PokemonData;
 import items.Item;
+import other.Constants;
+import other.Utils;
 
 /**
- * The Pokemon class is used for every individual pokémon.
+ * The entity.Pokemon class is used for every individual pokémon.
  * There can be multiple pokémon of one type, like two Pikachus,
  * but the data for Pikachu is always the same. <br/><br/>
  * Check PokemonData to see the data of every pokémon.
@@ -101,7 +105,7 @@ public class Pokemon
 
     private boolean isShiny()
     {
-        // TODO: Test if shinys work correctly when Pokemon Encounters are done
+        // TODO: Test if shinys work correctly when entity.Pokemon Encounters are done
         return Utils.generateRandomNumber(1, Constants.SHINY_RATIO_STANDARD) == 1;
     }
 

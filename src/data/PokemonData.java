@@ -1,7 +1,7 @@
 package data;
 
 /**
- * The PokemonData interface stores all the information for every Pokemon.
+ * The PokemonData interface stores all the information for every entity.Pokemon.
  */
 public class PokemonData
 {
@@ -26,7 +26,7 @@ public class PokemonData
 //    private Hability hiddenHability;
 
     // Combat fields
-    int initialHealthPoints = 0;
+    public int initialHealthPoints = 0;
 
     int initialAttack = 0;
     int initialDefense = 0;

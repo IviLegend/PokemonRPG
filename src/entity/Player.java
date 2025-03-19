@@ -1,5 +1,6 @@
 package entity;
 
+import data.Medal;
 import main.GamePanel;
 import main.KeyHandler;
 
@@ -7,6 +8,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 /**
  * The Player class set the behaviours for the player character.
@@ -17,11 +19,28 @@ public class Player extends Entity
     GamePanel gamePanel;
     KeyHandler keyHandler;
 
+    public Pokemon[] team = new entity.Pokemon[6];
+
+    // Trainer card
+    public String playerID;
+    public String playerName;
+    public int money;
+    public int registeredPokemons;
+    public Medal[] medals;
+    public LocalDateTime startDate;
+
     /// CONSTRUCTORS
-    public Player(GamePanel gamePanel, KeyHandler keyHandler)
+    public Player(GamePanel gamePanel, KeyHandler keyHandler, String playerName)
     {
         this.gamePanel = gamePanel;
         this.keyHandler = keyHandler;
+        this.playerName = playerName;
+
+        playerID = "0151";
+        registeredPokemons = 0;
+        money = 0;
+        medals = new Medal[8];
+        startDate = LocalDateTime.now();
 
         setDefaultValues();
         getPlayerImage();

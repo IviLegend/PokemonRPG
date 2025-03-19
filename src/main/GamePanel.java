@@ -34,7 +34,7 @@ public class GamePanel extends JPanel implements Runnable
     int FPS = 60;
 
     // Player values
-    Player player = new Player(this, keyHandler);
+    Player player = new Player(this, keyHandler, "Ivi");
 
     TileManager tileManager = new TileManager(this);
 
