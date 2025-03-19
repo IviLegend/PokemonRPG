@@ -5,9 +5,8 @@ import items.Item;
 /**
  * The Pokemon class is used for every individual pokémon.
  * There can be multiple pokémon of one type, like two Pikachus,
- * but the data for Pikachu is always the same.
- *
- * Check data.PokemonData to see the data of every pokémon.
+ * but the data for Pikachu is always the same. <br/><br/>
+ * Check PokemonData to see the data of every pokémon.
  */
 public class Pokemon
 {
@@ -23,7 +22,9 @@ public class Pokemon
 
     public boolean shiny;
 
+    // Actual stats
     private int healthPoints = calculateHealthPoints();
+    private int maxHealthPoints = calculateHealthPoints();
     private int attack = calculateOtherStat(1);
     private int defense = calculateOtherStat(2);
     private int specialAttack = calculateOtherStat(3);
@@ -38,8 +39,6 @@ public class Pokemon
     private int ivSpecialDefense;
     private int ivSpeed;
 
-    private int[] ivList = {ivHealthPoints, ivAttack, ivDefense, ivSpecialAttack, ivSpecialDefense, ivSpeed};
-
     // Effort Values (EVs)
     private int evHealthPoints;
     private int evAttack;
@@ -47,8 +46,6 @@ public class Pokemon
     private int evSpecialAttack;
     private int evSpecialDefense;
     private int evSpeed;
-
-    private int[] evList = {evHealthPoints, evAttack, evDefense, evSpecialAttack, evSpecialDefense, evSpeed};
 
     /// CONSTRUCTORS
     // Wild pokémons
@@ -98,7 +95,7 @@ public class Pokemon
      */
     private int calculateOtherStat(int statIndex)
     {
-        // TODO: Arreglar que haya initial Health Points, debería estar cada atributo.
+        // TODO: Fix initial Health Points, should be the stat associated
         return (int)((((double) (((2 * pokemonData.initialHealthPoints) + ivHealthPoints + (evHealthPoints / 4)) * level) / 100) + 5) * calculateNatureBonus(statIndex));
     }
 

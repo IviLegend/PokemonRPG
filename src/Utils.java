@@ -18,12 +18,12 @@ public class Utils
         {
             throw new IllegalArgumentException("The minimum value cannot be lower than the maximum value.");
         }
+
         Random random = new Random();
         return random.nextInt((max - min) + 1) + min;
     }
 
     /**
-     *
      * @param probability The probability of something happening.
      * @return
      * <ul>
@@ -39,8 +39,7 @@ public class Utils
         }
 
         probability *= 100;
-        // This number is between 1 and 10000.
-        int number = generateRandomNumber(1, (int) 10000);
+        int number = generateRandomNumber(1, 10000);
 
         return number <= probability;
     }
