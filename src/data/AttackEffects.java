@@ -25,7 +25,7 @@ public class AttackEffects
 
     public void sandAttack(Pokemon objective)
     {
-        objective.precision -=
+//        objective.precision -=
     }
 
     public void impactrueno(Pokemon objective, Pokemon attacker)

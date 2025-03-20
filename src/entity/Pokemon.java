@@ -31,13 +31,13 @@ public class Pokemon
 
     // Actual stats
     // TODO: Change declaration to constructor
-    public int healthPoints = calculateHealthPoints();
-    public int maxHealthPoints = calculateHealthPoints();
-    public int attack = calculateOtherStat(1);
-    public int defense = calculateOtherStat(2);
-    public int specialAttack = calculateOtherStat(3);
-    public int specialDefense = calculateOtherStat(4);
-    public int speed = calculateOtherStat(5);
+    public int healthPoints;
+    public int maxHealthPoints;
+    public int attack;
+    public int defense;
+    public int specialAttack;
+    public int specialDefense;
+    public int speed;
 
     // Individual Values (IVs)
     private int ivHealthPoints;
@@ -131,12 +131,12 @@ public class Pokemon
 
     private void calculateAtributes()
     {
-        healthPoints = calculateHealthPoints();
-        attack = calculateOtherStat(1);
-        defense = calculateOtherStat(2);
-        specialAttack = calculateOtherStat(3);
-        specialDefense = calculateOtherStat(4);
-        speed = calculateOtherStat(5);
+//        healthPoints = calculateHealthPoints();
+//        attack = calculateOtherStat(1);
+//        defense = calculateOtherStat(2);
+//        specialAttack = calculateOtherStat(3);
+//        specialDefense = calculateOtherStat(4);
+//        speed = calculateOtherStat(5);
     }
 
     private double calculateNatureBonus(int statIndex)

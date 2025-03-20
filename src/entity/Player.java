@@ -29,6 +29,13 @@ public class Player extends Entity
     public Medal[] medals;
     public LocalDateTime startDate;
 
+    // Sprites
+    public BufferedImage
+            sprHildaWalkUp1, sprHildaWalkUp2, sprHildaWalkUp3, sprHildaWalkUp4,
+            sprHildaWalkDown1, sprHildaWalkDown2, sprHildaWalkDown3, sprHildaWalkDown4,
+            sprHildaWalkRight1, sprHildaWalkRight2, sprHildaWalkRight3, sprHildaWalkRight4,
+            sprHildaWalkLeft1, sprHildaWalkLeft2, sprHildaWalkLeft3, sprHildaWalkLeft4;
+
     /// CONSTRUCTORS
     public Player(GamePanel gamePanel, KeyHandler keyHandler, String playerName)
     {
@@ -62,10 +69,25 @@ public class Player extends Entity
     {
         try
         {
-            sprUp1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/sprPlayerUp.png"));
-            sprDown1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/sprHildaRunDown1.png"));
-            sprRight1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/sprPlayerRight.png"));
-            sprLeft1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/sprPlayerLeft.png"));
+            sprHildaWalkUp1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkUp1.png"));
+            sprHildaWalkUp2 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkUp2.png"));
+            sprHildaWalkUp3 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkUp3.png"));
+            sprHildaWalkUp4 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkUp4.png"));
+
+            sprHildaWalkDown1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkDown1.png"));
+            sprHildaWalkDown2 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkDown2.png"));
+            sprHildaWalkDown3 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkDown3.png"));
+            sprHildaWalkDown4 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkDown4.png"));
+
+            sprHildaWalkRight1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkRight1.png"));
+            sprHildaWalkRight2 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkRight2.png"));
+            sprHildaWalkRight3 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkRight3.png"));
+            sprHildaWalkRight4 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkRight4.png"));
+
+            sprHildaWalkLeft1 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkLeft1.png"));
+            sprHildaWalkLeft2 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkLeft2.png"));
+            sprHildaWalkLeft3 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkLeft3.png"));
+            sprHildaWalkLeft4 = ImageIO.read(getClass().getResourceAsStream("/sprites/player/hilda/walk/sprHildaWalkLeft4.png"));
         }
         catch (IOException e)
         {
@@ -104,16 +126,16 @@ public class Player extends Entity
         switch (direction)
         {
             case "Up":
-                image = sprUp1;
+                image = sprHildaWalkUp1;
                 break;
             case "Down":
-                image = sprDown1;
+                image = sprHildaWalkDown1;
                 break;
             case "Right":
-                image = sprRight1;
+                image = sprHildaWalkRight1;
                 break;
             case "Left":
-                image = sprLeft1;
+                image = sprHildaWalkLeft1;
                 break;
         }
         graphics2D.drawImage(image, x, y, gamePanel.tileSize, gamePanel.tileSize, null);
