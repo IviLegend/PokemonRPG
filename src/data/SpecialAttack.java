@@ -2,6 +2,9 @@ package data;
 
 import entity.Pokemon;
 
+/**
+ * The SpecialAttack class is a class that will store every attack that has some special behaviour.
+ */
 public class SpecialAttack extends Attack
 {
     /// FIELDS

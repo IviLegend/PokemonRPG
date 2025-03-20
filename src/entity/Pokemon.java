@@ -19,8 +19,8 @@ public class Pokemon
 {
     /// FIELDS
     public PokemonData pokemonData;
-    private String name = pokemonData.name;
-    private int level = 1;
+    public String name = pokemonData.name;
+    public int level = 1;
 
     private Nature nature;
 
@@ -30,13 +30,14 @@ public class Pokemon
     public boolean shiny;
 
     // Actual stats
-    private int healthPoints = calculateHealthPoints();
-    private int maxHealthPoints = calculateHealthPoints();
-    private int attack = calculateOtherStat(1);
-    private int defense = calculateOtherStat(2);
-    private int specialAttack = calculateOtherStat(3);
-    private int specialDefense = calculateOtherStat(4);
-    private int speed = calculateOtherStat(5);
+    // TODO: Change declaration to constructor
+    public int healthPoints = calculateHealthPoints();
+    public int maxHealthPoints = calculateHealthPoints();
+    public int attack = calculateOtherStat(1);
+    public int defense = calculateOtherStat(2);
+    public int specialAttack = calculateOtherStat(3);
+    public int specialDefense = calculateOtherStat(4);
+    public int speed = calculateOtherStat(5);
 
     // Individual Values (IVs)
     private int ivHealthPoints;
@@ -53,6 +54,9 @@ public class Pokemon
     private int evSpecialAttack;
     private int evSpecialDefense;
     private int evSpeed;
+
+    // Combat values
+    public int precision;
 
     /// CONSTRUCTORS
     // Wild pokémons
@@ -91,7 +95,7 @@ public class Pokemon
     /**
      * @return The health points for each level.
      */
-    private int calculateHealthPoints()
+    private int calculateHealthPoints(int level)
     {
         return ((((2 * pokemonData.initialHealthPoints) + ivHealthPoints + (evHealthPoints / 4)) * level) / 100) + level + 10;
     }
@@ -100,7 +104,7 @@ public class Pokemon
      * @param statIndex The index of the stat that will be calculated.
      * @return The stat for each level.
      */
-    private int calculateOtherStat(int statIndex)
+    public int calculateOtherStat(int statIndex, int level)
     {
         // TODO: Fix initial Health Points, should be the stat associated
         return (int)((((double) (((2 * pokemonData.initialHealthPoints) + ivHealthPoints + (evHealthPoints / 4)) * level) / 100) + 5) * calculateNatureBonus(statIndex));

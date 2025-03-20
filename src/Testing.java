@@ -19,6 +19,6 @@ public class Testing
         System.out.println("true: " + countTrue);
         System.out.println("false: " + countFalse);
 
-        Attack impactrueno = new Attack("Impactrueno", "Descripción", ElementType.ELECTRIC, AttackCategory.PHYSICAL, (objective, attacker) -> attackEffects.impactrueno(), 50, 100, 15, AttackTarget.EVERY_OPONENT, true, 0);
+        Attack impactrueno = new Attack("Impactrueno", "Descripción", ElementType.ELECTRIC, AttackCategory.PHYSICAL, (objective, attacker) -> attackEffects.impactrueno(objective, attacker), 50, 100, 15, AttackTarget.EVERY_OPONENT, true, 0);
     }
 }

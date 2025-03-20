@@ -1,6 +1,7 @@
 package data;
 
 import entity.Pokemon;
+import other.Constants;
 
 public class Attack
 {
@@ -39,5 +40,13 @@ public class Attack
     public void processAttack(Pokemon objective, Pokemon attacker)
     {
 
+    }
+
+    /**
+     * @return The maximum PP that an Attack can have.
+     */
+    public int calculateMaxPowerPoints()
+    {
+        return powerPoints + (powerPoints * ((Constants.MAX_MORE_PP_ALLOWED * (Constants.MORE_PP_UPGRADE_PERCENTAGE / 100))));
     }
 }

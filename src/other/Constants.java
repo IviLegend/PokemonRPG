@@ -21,6 +21,16 @@ public class Constants
     public static int CYCLE_STEPS = 257;
 
     /**
+     * The increase percentage that the Item More PP gives.
+     */
+    public static int MORE_PP_UPGRADE_PERCENTAGE = 20;
+
+    /**
+     * The maximum amount of More PP that can be applied to an attack.
+     */
+    public static int MAX_MORE_PP_ALLOWED = 3;
+
+    /**
      * The pokedollar symbol.
      */
     public static char POKEDOLLAR_SYMBOL = '₽';
