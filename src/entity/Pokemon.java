@@ -1,10 +1,13 @@
 package entity;
 
+import data.Attack;
 import data.Nature;
 import data.PokemonData;
 import items.Item;
 import other.Constants;
 import other.Utils;
+
+import java.util.Iterator;
 
 /**
  * The entity.Pokemon class is used for every individual pokémon.
@@ -112,7 +115,14 @@ public class Pokemon
     private void levelUp()
     {
         level++;
+        Attack newAttack = getNewAttacks();
         calculateAtributes();
+    }
+
+    private Attack getNewAttacks()
+    {
+        // TODO: Give the chance to change the attack if desired.
+        return null;
     }
 
     private void calculateAtributes()

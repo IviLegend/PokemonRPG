@@ -2,6 +2,9 @@ package data;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The PokemonData interface stores all the information for every entity.Pokemon.
@@ -37,6 +40,9 @@ public class PokemonData
     public BufferedImage silhouette;
 
     public ColorList color;
+
+    // TODO: Change levelAttacks initialization to constructor when finished every system.
+    public Map<Integer, Attack> levelAttacks = new HashMap<>();
 
     // Hability Fields
 //    private Hability hability;
