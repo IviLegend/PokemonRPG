@@ -40,17 +40,20 @@ public class TileManager
 
     public void draw(Graphics2D graphics2D)
     {
+        int separation = gamePanel.originalTileSize * gamePanel.scale;
+
+        // Draw the tilemap
         for (int i = 0; i < gamePanel.maxScreenCol; i++)
         {
             for (int j = 0; j < gamePanel.maxScreenRow; j++)
             {
                 if (j == 0)
                 {
-                    graphics2D.drawImage(tiles[1].image, (i * 48), (0), gamePanel.tileSize, gamePanel.tileSize, null);
+                    graphics2D.drawImage(tiles[1].image, (i * separation), (0), gamePanel.tileSize, gamePanel.tileSize, null);
                 }
                 else
                 {
-                    graphics2D.drawImage(tiles[0].image, (i * 48), (j * 48), gamePanel.tileSize, gamePanel.tileSize, null);
+                    graphics2D.drawImage(tiles[0].image, (i * separation), (j * separation), gamePanel.tileSize, gamePanel.tileSize, null);
                 }
             }
         }

@@ -22,6 +22,8 @@ public class PokemonData
     public Category category;
     public Growth growthType;
 
+    public int captureRatio;
+
     double weigth = 0; // Expressed in KG
     double height = 0; // Expressed in M
 

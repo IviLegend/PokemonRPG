@@ -7,12 +7,10 @@ import items.Item;
 import other.Constants;
 import other.Utils;
 
-import java.util.Iterator;
-
 /**
- * The entity.Pokemon class is used for every individual pokémon.
- * There can be multiple pokémon of one type, like two Pikachus,
- * but the data for Pikachu is always the same. <br/><br/>
+ * The Pokemon class is used for every individual pokémon.
+ * There can be multiple pokémon of one type, for example, two Pikachus
+ * with different levels, natures, etc; but the data for Pikachu is always the same. <br/><br/>
  * Check PokemonData to see the data of every pokémon.
  */
 public class Pokemon
@@ -25,8 +23,6 @@ public class Pokemon
     private Nature nature;
 
     public Item equipedItem;
-    public int captureRatio;
-
     public boolean shiny;
 
     // Actual stats
@@ -97,6 +93,7 @@ public class Pokemon
      */
     private int calculateHealthPoints(int level)
     {
+        // TODO: Refactor this whole method and the calculateOtherStat method too.
         return ((((2 * pokemonData.initialHealthPoints) + ivHealthPoints + (evHealthPoints / 4)) * level) / 100) + level + 10;
     }
 
@@ -129,6 +126,7 @@ public class Pokemon
         return null;
     }
 
+    // TODO: Fix this when the method is refactored.
     private void calculateAtributes()
     {
 //        healthPoints = calculateHealthPoints();
@@ -139,6 +137,16 @@ public class Pokemon
 //        speed = calculateOtherStat(5);
     }
 
+    /**
+     * Calculates the nature bonus depending on the Pokemon nature.
+     * @param statIndex
+     * @return
+     * <ul>
+     *     <li>{@code 1.1} - if the stat is favorable with the Pokemon nature.</li>
+     *     <li>{@code 0.9} - if the stat is unfavorable with the Pokemon nature.</li>
+     *     <li>{@code 1.0} - in any other case.</li>
+     * </ul>
+     */
     private double calculateNatureBonus(int statIndex)
     {
         double favorable = 1.1;
@@ -196,6 +204,15 @@ public class Pokemon
         return neutral;
     }
 
+    /**
+     * Checks if there is a nature in the list that is equals to the Pokemon nature.
+     * @param natureList the list of Natures that will be checked.
+     * @return
+     * <ul>
+     *     <li>If there is the Nature in the list, the Nature.</li>
+     *     <li>If there is in not, {@code null}.</li>
+     * </ul>
+     */
     private Nature checkNatureInList(Nature[] natureList)
     {
         for (Nature nature : natureList)

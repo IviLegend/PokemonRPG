@@ -30,6 +30,38 @@ public class Constants
      */
     public static int MAX_MORE_PP_ALLOWED = 3;
 
+    public static int MAX_STAT_MODIFIER_IN_COMBAT = 6;
+
+    /**
+     * The index for the Health stat.
+     */
+    public static int STAT_HEALTH = 1;
+
+    /**
+     * The index for the Attack stat.
+     */
+    public static int STAT_ATTACK = 2;
+
+    /**
+     * The index for the Defense stat.
+     */
+    public static int STAT_DEFENSE = 3;
+
+    /**
+     * The index for the Special Attack stat.
+     */
+    public static int STAT_SPECIAL_ATTACK = 4;
+
+    /**
+     * The index for the Special Defense stat.
+     */
+    public static int STAT_SPECIAL_DEFENSE = 5;
+
+    /**
+     * The index for the Speed stat.
+     */
+    public static int STAT_SPEED = 6;
+
     /**
      * The pokedollar symbol.
      */

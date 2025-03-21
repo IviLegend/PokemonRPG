@@ -44,4 +44,13 @@ public class Utils
 
         return number <= probability;
     }
+
+    /**
+     *
+     */
+    public static String separateNumberWithDots(Number number)
+    {
+        // TODO: Inverse for that add a dot for every three chars.
+        return "";
+    }
 }
