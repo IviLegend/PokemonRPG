@@ -1,7 +1,7 @@
 package data;
 
+import data.ability.Ability;
 import data.attack.Attack;
-import data.ability.AbilityEffect;
 
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
@@ -25,11 +25,12 @@ public class PokemonData
 
     public int captureRatio;
 
-    public AbilityEffect[] abilityList = new AbilityEffect[2];
-    public
+    public Ability[] abilityUnitary;
+    public Ability[] abilitySecondary;
+    public Ability[] abilityHidden;
 
-    double weigth = 0; // Expressed in KG
-    double height = 0; // Expressed in M
+    double weigth = 0; // Expressed in kilograms
+    double height = 0; // Expressed in meters
 
     public double malePercentage;
 
@@ -48,11 +49,7 @@ public class PokemonData
     public ColorList color;
 
     // TODO: Change levelAttacks initialization to constructor when finished every system.
-    public Map<Integer, Attack> levelAttacks = new HashMap<>();
-
-    // Hability Fields
-//    private Hability hability;
-//    private Hability hiddenHability;
+    public Map<Attack, Integer> levelAttacks = new HashMap<>();
 
     // Combat fields
     public int initialHealthPoints = 0;
