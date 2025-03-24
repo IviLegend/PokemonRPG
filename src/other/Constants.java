@@ -32,6 +32,14 @@ public class Constants
 
     public static int MAX_STAT_MODIFIER_IN_COMBAT = 6;
 
+    public static int PLAYER_TURN_POKEMON_1 = 1;
+
+    public static int PLAYER_TURN_POKEMON_2 = 2;
+
+    public static int OPPONENT_TURN_POKEMON_1 = 3;
+
+    public static int OPPONENT_TURN_POKEMON_2 = 4;
+
     /**
      * The index for the Health stat.
      */

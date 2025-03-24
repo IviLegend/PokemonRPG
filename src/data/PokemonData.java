@@ -17,8 +17,8 @@ public class PokemonData
     public int pokemonNumber = 0;
     public String name = "Missingno";
 
-    ElementType principalType = null;
-    ElementType secondaryType = null;
+    public ElementType principalType = null;
+    public ElementType secondaryType = null;
 
     public Category category;
     public Growth growthType;
@@ -136,21 +136,18 @@ public class PokemonData
     public double erraticModule(int level)
     {
         int module = (level % 3);
+        double erraticModule = 0;
         switch (module)
         {
-            case 0 ->
-            {
-                return 0;
-            }
-            case 1 ->
-            {
-                return 0.008;
-            }
-            case 2 ->
-            {
-                return 0.014;
-            }
+            case 0 -> erraticModule = 0;
+            case 1 -> erraticModule = 0.008;
+            case 2 -> erraticModule = 0.014;
         }
-        return 0;
+        return erraticModule;
+    }
+
+    public int getStatsTotal()
+    {
+        return initialHealthPoints + initialAttack + initialDefense + initialSpecialAttack + initialSpecialDefense + initialSpeed;
     }
 }
