@@ -1,5 +1,6 @@
-package data;
+package data.attack;
 
+import data.ElementType;
 import entity.Pokemon;
 import other.Constants;
 

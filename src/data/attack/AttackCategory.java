@@ -1,4 +1,4 @@
-package data;
+package data.attack;
 
 public enum AttackCategory
 {

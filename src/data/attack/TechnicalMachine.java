@@ -1,4 +1,4 @@
-package data;
+package data.attack;
 
 public class TechnicalMachine
 {

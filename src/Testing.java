@@ -1,4 +1,8 @@
 import data.*;
+import data.attack.Attack;
+import data.attack.AttackCategory;
+import data.attack.AttackEffects;
+import data.attack.AttackTarget;
 import other.Utils;
 
 public class Testing

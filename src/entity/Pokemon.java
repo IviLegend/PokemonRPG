@@ -1,6 +1,6 @@
 package entity;
 
-import data.Attack;
+import data.attack.Attack;
 import data.Nature;
 import data.PokemonData;
 import items.Item;

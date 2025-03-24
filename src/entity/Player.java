@@ -13,13 +13,11 @@ import java.time.LocalDateTime;
 /**
  * The Player class set the behaviours for the player character.
  */
-public class Player extends Entity
+public class Player extends Trainer
 {
     /// FIELDS
     GamePanel gamePanel;
     KeyHandler keyHandler;
-
-    public Pokemon[] team = new entity.Pokemon[6];
 
     // Trainer card
     public String playerID;

@@ -1,4 +1,4 @@
-package data;
+package data.attack;
 
 import entity.Pokemon;
 

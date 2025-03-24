@@ -1,5 +1,9 @@
 package data;
 
+import data.attack.AdditionalEffect;
+import data.attack.Attack;
+import data.attack.AttackCategory;
+import data.attack.AttackTarget;
 import entity.Pokemon;
 
 /**

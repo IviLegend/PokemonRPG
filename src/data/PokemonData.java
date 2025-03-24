@@ -1,8 +1,9 @@
 package data;
 
-import java.awt.*;
+import data.attack.Attack;
+import data.ability.AbilityEffect;
+
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,6 +24,9 @@ public class PokemonData
     public Growth growthType;
 
     public int captureRatio;
+
+    public AbilityEffect[] abilityList = new AbilityEffect[2];
+    public
 
     double weigth = 0; // Expressed in KG
     double height = 0; // Expressed in M
