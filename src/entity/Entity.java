@@ -1,6 +1,5 @@
 package entity;
 
-import java.awt.image.BufferedImage;
 
 /**
  * The Entity class is used for the Player and every NPC in the game.
