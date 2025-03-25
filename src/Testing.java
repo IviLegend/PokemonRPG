@@ -1,8 +1,10 @@
+import battle.Battle;
 import data.*;
 import data.attack.Attack;
 import data.attack.AttackCategory;
 import data.attack.AttackEffects;
 import data.attack.AttackTarget;
+import entity.Pokemon;
 import other.Utils;
 
 public class Testing
@@ -24,5 +26,11 @@ public class Testing
         System.out.println("false: " + countFalse);
 
         Attack impactrueno = new Attack("Impactrueno", "Descripción", ElementType.ELECTRIC, AttackCategory.PHYSICAL, (objective, attacker) -> attackEffects.impactrueno(objective, attacker), 50, 100, 15, AttackTarget.EVERY_OPONENT, true, 0);
+
+        Battle battle = new Battle();
+
+        PokemonData kyogre = new PokemonData("Kyogre", ElementType.DRAGON, ElementType.ELECTRIC);
+
+        System.out.println(battle.getEffectivity(impactrueno, kyogre.principalType, kyogre.secondaryType));
     }
 }

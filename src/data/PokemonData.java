@@ -2,8 +2,10 @@ package data;
 
 import data.ability.Ability;
 import data.attack.Attack;
+import data.attack.TechnicalMachine;
 
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,12 +18,14 @@ public class PokemonData
     // General fields
     public int pokemonNumber = 0;
     public String name = "Missingno";
+    public String description;
 
     public ElementType principalType = null;
     public ElementType secondaryType = null;
 
     public Category category;
     public Growth growthType;
+    public Habitat habitat;
 
     public int captureRatio;
 
@@ -37,6 +41,8 @@ public class PokemonData
 
     public PokemonData pokemonEvolution = null;
     public int evolutionLevel = 0;
+
+    public ArrayList<TechnicalMachine> TMList = new ArrayList<>();
 
     public int cycles;
 
@@ -70,6 +76,13 @@ public class PokemonData
     int[] initialValues = {initialHealthPoints, initialAttack, initialDefense, initialSpecialAttack, initialSpecialAttack, initialSpecialDefense, initialSpeed};
 
     /// CONSTRUCTORS
+    // TODO: Remove this constructor when finish testing
+    public PokemonData(String name, ElementType principalType, ElementType secondaryType)
+    {
+        this.name = name;
+        this.principalType = principalType;
+        this.secondaryType = secondaryType;
+    }
 
     /// METHODS
     public double getExperienceForLevel(int level)

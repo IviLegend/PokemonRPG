@@ -1,6 +1,7 @@
 package battle;
 
 import data.ElementType;
+import data.TypeChart;
 import data.attack.Attack;
 import data.attack.AttackCategory;
 import entity.Pokemon;
@@ -66,10 +67,32 @@ public class Battle
         else { return 1.0; }
     }
 
-    public double getEffectivity()
+    /**
+     *
+     * @param attack - The attack that is used.
+     * @param objectivePrincipalType - The objective's principal type.
+     * @param objectiveSecondaryType - The objective's secondary type, even if it's null.
+     * @return
+     * <ul>
+     *     <li>{@code 0.0}</li>
+     *     <li>{@code 0.25}</li>
+     *     <li>{@code 0.5}</li>
+     *     <li>{@code 1.0}</li>
+     *     <li>{@code 2.0}</li>
+     *     <li>{@code 4.0}</li>
+     * </ul>
+     */
+    public double getEffectivity(Attack attack, ElementType objectivePrincipalType, ElementType objectiveSecondaryType)
     {
-        double effectivity;
-        return 1.0;
+        double a;
+        double b;
+
+        a = TypeChart.effectiveness[attack.type.ordinal()][objectivePrincipalType.ordinal()];
+
+        if (objectiveSecondaryType == null) { b = 1.0; }
+        else { b = TypeChart.effectiveness[attack.type.ordinal()][objectiveSecondaryType.ordinal()]; }
+
+        return a * b;
     }
 
     public int getAttack(Pokemon attacker, Attack attack)
