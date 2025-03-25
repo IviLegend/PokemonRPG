@@ -34,9 +34,13 @@ public class PokemonData
 
     public double malePercentage;
 
+    public PokemonData pokemonEvolution = null;
+    public int evolutionLevel = 0;
+
     public int cycles;
 
     // Image fields
+    // For sprites that change with the gender, use PokemonDataGender
     public BufferedImage iconImage;
     public BufferedImage frontImage;
     public BufferedImage frontImageShiny;
@@ -44,7 +48,7 @@ public class PokemonData
     public BufferedImage backImageShiny;
 
     public BufferedImage footprint;
-    public BufferedImage silhouette;
+    public Silhouette silhouette;
 
     public ColorList color;
 

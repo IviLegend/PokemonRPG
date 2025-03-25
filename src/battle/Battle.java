@@ -1,11 +1,14 @@
 package battle;
 
 import data.ElementType;
+import data.attack.Attack;
+import data.attack.AttackCategory;
 import entity.Pokemon;
 import other.Utils;
 
 public class Battle
 {
+    /// FIELDS
     public BattleType battleType;
     public Pokemon attacker;
     public Pokemon attacker2;
@@ -19,6 +22,7 @@ public class Battle
 
     public int turn = 0;
 
+    /// METHODS
     public void changeTurn()
     {
 
@@ -48,5 +52,29 @@ public class Battle
     public void changePokemon(Pokemon pokemonToChange)
     {
 
+    }
+
+    // Attacking methods
+    public int getAttackDamage(Pokemon attacker, Attack attack, Pokemon objective)
+    {
+        return (int)Math.round((0.01 * getBonus(attacker, attack)));
+    }
+
+    public double getBonus(Pokemon attacker, Attack attack)
+    {
+        if (attacker.pokemonData.principalType == attack.type) { return 1.5; }
+        else { return 1.0; }
+    }
+
+    public double getEffectivity()
+    {
+
+    }
+
+    public int getAttack(Pokemon attacker, Attack attack)
+    {
+        if (attack.attackCategory == AttackCategory.PHYSICAL) { return attacker.attack; }
+        else if (attack.attackCategory == AttackCategory.SPECIAL) { return attacker.specialAttack; }
+        return 0; // TODO: Check if this brokes something (probably yes)
     }
 }

@@ -2,8 +2,8 @@ package data;
 
 public class TypeChart
 {
-    double[][] effectiveness =
-    {                                               // DEFENDERS \\
+    public static double[][] effectiveness =
+    {                                                // DEFENDERS \\
             // NOR  FIR  WAT  ELE  GRA  ICE  FIG  POI  GRO  FLY  PSY  BUG  ROC  GHO  DRA  DAR  STE  FAI
               {1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 0.0, 1.0, 1.0, 0.5, 1.0}, // NORMAL
               {1.0, 0.5, 0.5, 1.0, 2.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 0.5, 1.0, 0.5, 1.0, 2.0, 1.0}, // FIRE
