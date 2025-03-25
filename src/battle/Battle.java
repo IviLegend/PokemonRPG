@@ -23,6 +23,8 @@ public class Battle
 
     public int turn = 0;
 
+    public Attack chosedAttack;
+
     /// METHODS
     public void changeTurn()
     {
@@ -56,9 +58,17 @@ public class Battle
     }
 
     // Attacking methods
-    public int getAttackDamage(Pokemon attacker, Attack attack, Pokemon objective)
+    public int getAttackDamage(Attack attack, Pokemon attacker, Pokemon objective)
     {
-        return (int)Math.round((0.01 * getBonus(attacker, attack) * Utils.generateRandomNumber(85, 100)));
+        double bonus = getBonus(attacker, attack);
+        double effectivity = getEffectivity(attack, objective.pokemonData.principalType, objective.pokemonData.secondaryType);
+        double variation = Utils.generateRandomNumber(85, 100);
+        double attackerLevel = attacker.level;
+        double attackType = getAttack(attacker, attack);
+        double attackPower = attack.power;
+        double objectiveDefense = objective.defense;
+
+        return (int) Math.round(0.01 * bonus * effectivity * variation * ((((0.2 * attackerLevel + 1) * attackType * attackPower) / 25 * objectiveDefense) + 2));
     }
 
     public double getBonus(Pokemon attacker, Attack attack)
