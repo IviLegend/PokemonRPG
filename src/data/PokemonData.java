@@ -32,7 +32,8 @@ public class PokemonData
     double weigth = 0; // Expressed in kilograms
     double height = 0; // Expressed in meters
 
-    public double malePercentage;
+    // TODO: Make the gender system.
+    public double genderPercentage;
 
     public PokemonData pokemonEvolution = null;
     public int evolutionLevel = 0;

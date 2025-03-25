@@ -57,7 +57,7 @@ public class Battle
     // Attacking methods
     public int getAttackDamage(Pokemon attacker, Attack attack, Pokemon objective)
     {
-        return (int)Math.round((0.01 * getBonus(attacker, attack)));
+        return (int)Math.round((0.01 * getBonus(attacker, attack) * Utils.generateRandomNumber(85, 100)));
     }
 
     public double getBonus(Pokemon attacker, Attack attack)
@@ -68,7 +68,8 @@ public class Battle
 
     public double getEffectivity()
     {
-
+        double effectivity;
+        return 1.0;
     }
 
     public int getAttack(Pokemon attacker, Attack attack)

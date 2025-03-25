@@ -7,6 +7,8 @@ import items.Item;
 import other.Constants;
 import other.Utils;
 
+import java.util.Collection;
+
 /**
  * The Pokemon class is used for every individual pokémon.
  * There can be multiple pokémon of one type, for example, two Pikachus
@@ -122,7 +124,11 @@ public class Pokemon
 
     private Attack getNewAttacks()
     {
-        // TODO: Give the chance to change the attack if desired.
+        Collection<Integer> levelAttacks = pokemonData.levelAttacks.values();
+        if (levelAttacks.contains(level))
+        {
+            // TODO: Get the attacks on one level.
+        }
         return null;
     }
 
