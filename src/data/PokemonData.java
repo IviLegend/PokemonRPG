@@ -29,9 +29,9 @@ public class PokemonData
 
     public int captureRatio;
 
-    public Ability[] abilityUnitary;
-    public Ability[] abilitySecondary;
-    public Ability[] abilityHidden;
+    public Ability abilityUnitary;
+    public Ability abilitySecondary;
+    public Ability abilityHidden;
 
     double weigth = 0; // Expressed in kilograms
     double height = 0; // Expressed in meters
@@ -159,6 +159,20 @@ public class PokemonData
             case 2 -> erraticModule = 0.014;
         }
         return erraticModule;
+    }
+
+    /**
+     * Checks if a pokémon has an specific Ability.
+     * @param ability - The Ability that is going to be checked .
+     * @return
+     * <ul>
+     *     <li>{@code true} - If the pokémon has this ability.</li>
+     *     <li>{@code false} - If the pokémon doesn't have this ability.</li>
+     * </ul>
+     */
+    public boolean checkIfHasAbility(Ability ability)
+    {
+        return (ability.equals(abilityUnitary) || ability.equals(abilitySecondary) || ability.equals(abilityHidden));
     }
 
     public int getStatsTotal()

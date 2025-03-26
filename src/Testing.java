@@ -32,5 +32,10 @@ public class Testing
         PokemonData kyogre = new PokemonData("Kyogre", ElementType.DRAGON, ElementType.ELECTRIC);
 
         System.out.println(battle.getEffectivity(impactrueno, kyogre.principalType, kyogre.secondaryType));
+
+        for (int i = 0; i < 100; i++)
+        {
+
+        }
     }
 }

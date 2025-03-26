@@ -19,6 +19,8 @@ public class Player extends Trainer
     GamePanel gamePanel;
     KeyHandler keyHandler;
 
+    static boolean hasShinyCharm = false;
+
     // Trainer card
     public String playerID;
     public String playerName;

@@ -64,6 +64,13 @@ public class Pokemon
         this.level = level;
         this.nature = selectRandomNature();
         this.shiny = isShiny();
+
+        this.ivHealthPoints = Utils.generateRandomNumber(0, Constants.MAX_INDIVIDUAL_VALUES_NUMBER);
+        this.ivAttack = Utils.generateRandomNumber(0, Constants.MAX_INDIVIDUAL_VALUES_NUMBER);
+        this.ivDefense = Utils.generateRandomNumber(0, Constants.MAX_INDIVIDUAL_VALUES_NUMBER);
+        this.ivSpecialAttack = Utils.generateRandomNumber(0, Constants.MAX_INDIVIDUAL_VALUES_NUMBER);
+        this.ivSpecialDefense = Utils.generateRandomNumber(0, Constants.MAX_INDIVIDUAL_VALUES_NUMBER);
+        this.ivSpeed = Utils.generateRandomNumber(0, Constants.MAX_INDIVIDUAL_VALUES_NUMBER);
     }
 
     // Trainer pokémons
@@ -112,7 +119,8 @@ public class Pokemon
     private boolean isShiny()
     {
         // TODO: Test if shinys work correctly when entity.Pokemon Encounters are done
-        return Utils.generateRandomNumber(1, Constants.SHINY_RATIO_STANDARD) == 1;
+        if (Player.hasShinyCharm) { return Utils.generateRandomNumber(1, Constants.SHINY_RATIO_SHINY_CHARM) == 1; }
+        else { return Utils.generateRandomNumber(1, Constants.SHINY_RATIO_STANDARD) == 1; }
     }
 
     private void levelUp()

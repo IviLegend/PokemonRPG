@@ -16,9 +16,24 @@ public class Constants
     public static int SHINY_RATIO_STANDARD = 4096;
 
     /**
+     * The ratio of shinys to appear with the shiny charm.
+     */
+    public static int SHINY_RATIO_SHINY_CHARM = 1365;
+
+    /**
      * The steps per cycle to hatch eggs.
      */
     public static int CYCLE_STEPS = 257;
+
+    /**
+     * The maximum number for IVs.
+     */
+    public static int MAX_INDIVIDUAL_VALUES_NUMBER = 31;
+
+    /**
+     * The maximum number for EVs.
+     */
+    public static int MAX_EFFORT_VALUES_NUMBER = 252;
 
     /**
      * The increase percentage that the Item More PP gives.
@@ -30,15 +45,35 @@ public class Constants
      */
     public static int MAX_MORE_PP_ALLOWED = 3;
 
+    /**
+     * The maximum times a stat can be upgraded or downgraded in combat.
+     */
     public static int MAX_STAT_MODIFIER_IN_COMBAT = 6;
 
+    /**
+     * The turn for your first pokémon.
+     */
     public static int PLAYER_TURN_POKEMON_1 = 1;
 
+    /**
+     * The turn for your second pokémon.
+     */
     public static int PLAYER_TURN_POKEMON_2 = 2;
 
+    /**
+     * The turn for the opponent's first pokémon.
+     */
     public static int OPPONENT_TURN_POKEMON_1 = 3;
 
+    /**
+     * The turn for the opponent's second pokémon.
+     */
     public static int OPPONENT_TURN_POKEMON_2 = 4;
+
+    /**
+     * The maximum index for critics probability.
+     */
+    public static int MAX_CRITIC_INDEX = 4;
 
     /**
      * The index for the Health stat.

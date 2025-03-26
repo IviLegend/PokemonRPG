@@ -54,12 +54,18 @@ public class Battle
 
     public void changePokemon(Pokemon pokemonToChange)
     {
-
+        attacker = pokemonToChange;
     }
 
     // Attacking methods
     public int getAttackDamage(Attack attack, Pokemon attacker, Pokemon objective)
     {
+        // TODO: Replace critic index with the attacker's critic index.
+        boolean isCritic = isCritic(1);
+        double criticMultiplier = 1.0;
+
+        if (isCritic) { criticMultiplier = 1.5; }
+
         double bonus = getBonus(attacker, attack);
         double effectivity = getEffectivity(attack, objective.pokemonData.principalType, objective.pokemonData.secondaryType);
         double variation = Utils.generateRandomNumber(85, 100);
@@ -68,7 +74,31 @@ public class Battle
         double attackPower = attack.power;
         double objectiveDefense = objective.defense;
 
-        return (int) Math.round(0.01 * bonus * effectivity * variation * ((((0.2 * attackerLevel + 1) * attackType * attackPower) / 25 * objectiveDefense) + 2));
+        return (int) ((int) Math.round(0.01 * bonus * effectivity * variation * ((((0.2 * attackerLevel + 1) * attackType * attackPower) / 25 * objectiveDefense) + 2)) * criticMultiplier);
+    }
+
+    public boolean isCritic(int criticIndex)
+    {
+        // TODO: When file reading abilities, check if this isn't broken.
+        /*if (objective.pokemonData.checkIfHasAbility(shellArmor) || objective.pokemonData.checkIfHasAbility(battleArmor))
+        {
+            return false;
+        }*/
+
+        // TODO: Finish checking special conditions.
+
+        double prob = 0.0;
+
+        switch (criticIndex)
+        {
+            case 0 -> prob = 6.25;
+            case 1 -> prob = 12.5;
+            case 2 -> prob = 25.0;
+            case 3 -> prob = 33.33;
+            case 4 -> prob = 50.0;
+        }
+
+        return Utils.calculateProbability(prob);
     }
 
     public double getBonus(Pokemon attacker, Attack attack)
