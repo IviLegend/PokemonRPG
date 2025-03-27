@@ -11,6 +11,5 @@ public enum StatusCondition
     BADLY_POISONED,
     ASLEEP,
     DROWSY,
-    FROZEN,
-    FROSTBYTE
+    FROZEN
 }

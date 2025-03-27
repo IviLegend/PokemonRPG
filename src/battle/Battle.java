@@ -1,6 +1,7 @@
 package battle;
 
 import data.ElementType;
+import data.StatusCondition;
 import data.TypeChart;
 import data.attack.Attack;
 import data.attack.AttackCategory;
@@ -24,6 +25,8 @@ public class Battle
     public int turn = 0;
 
     public Attack chosedAttack;
+
+    public StatusEffects[] attacker1StatusEffects;
 
     /// METHODS
     public void changeTurn()
@@ -50,6 +53,13 @@ public class Battle
         int F = ((((currentPokemonTurn.speed * 128) / objectiveSpeed) + 30 * timesTriedToRun) % 256);
 
         return F < Utils.generateRandomNumber(0, 255);
+    }
+
+    public void processTurn()
+    {
+        // TODO: Check who has the attacking priority
+
+        // TODO: Check the status effects (Confused, Cursed...)
     }
 
     public void changePokemon(Pokemon pokemonToChange)
@@ -79,7 +89,7 @@ public class Battle
 
     public boolean isCritic(int criticIndex)
     {
-        // TODO: When file reading abilities, check if this isn't broken.
+        // TODO: When file reading abilities, check if this isn't broken (It probably is).
         /*if (objective.pokemonData.checkIfHasAbility(shellArmor) || objective.pokemonData.checkIfHasAbility(battleArmor))
         {
             return false;

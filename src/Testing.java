@@ -25,7 +25,7 @@ public class Testing
             else countFalse++;
         }
 
-        System.out.println(Utils.separateNumberWithDots(100000000));
+        System.out.println(Utils.separateNumberWithDots(100_000_000));
 
         System.out.println("true: " + countTrue);
         System.out.println("false: " + countFalse);
