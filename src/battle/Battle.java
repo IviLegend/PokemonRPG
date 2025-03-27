@@ -2,6 +2,7 @@ package battle;
 
 import data.ElementType;
 import data.StatusCondition;
+import data.StatusEffects;
 import data.TypeChart;
 import data.attack.Attack;
 import data.attack.AttackCategory;
@@ -59,7 +60,27 @@ public class Battle
     {
         // TODO: Check who has the attacking priority
 
-        // TODO: Check the status effects (Confused, Cursed...)
+        // TODO: For each Pokémon:
+        // TODO: Process the action of the trainer (Run, Attack, Change or Use an item)
+        /*
+            If run
+            // TODO: Try running with max priority
+            If change
+            // TODO: Change with max priority
+            If use an item
+            // TODO: Use the item with max priority
+
+            If attack
+            // TODO: Check who has the priority
+
+            // TODO: Process the status conditions for that pokemon (Paralized, Burned...)
+
+            // TODO: Process the attack.
+
+            // TODO: Process the status effects (Confused, Cursed...)
+
+            // TODO: Process the status conditions again (Paralized, Burned...) There should be a differentiation on if it's being checked at the start or at the end.
+         */
     }
 
     public void changePokemon(Pokemon pokemonToChange)

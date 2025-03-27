@@ -10,6 +10,5 @@ public enum StatusCondition
     POISONED,
     BADLY_POISONED,
     ASLEEP,
-    DROWSY,
     FROZEN
 }
