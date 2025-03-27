@@ -11,6 +11,6 @@ Features:
 - The combat system is from Gen V.
 - The types are adapted for Gen VI, therefore including Fairy type.
 - The sprites for the icons are all from Gen VI.
-- Megaevolutions are included.
+- Megaevolutions.
 
 Special thanks to: https://www.youtube.com/@RyiSnow
