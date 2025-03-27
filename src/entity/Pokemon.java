@@ -7,7 +7,7 @@ import items.Item;
 import other.Constants;
 import other.Utils;
 
-import java.util.Collection;
+import java.util.*;
 
 /**
  * The Pokemon class is used for every individual pokémon.
@@ -19,7 +19,7 @@ public class Pokemon
 {
     /// FIELDS
     public PokemonData pokemonData;
-    public String name = pokemonData.name;
+    public String name;
     public int level = 1;
 
     private Nature nature;
@@ -123,21 +123,12 @@ public class Pokemon
         else { return Utils.generateRandomNumber(1, Constants.SHINY_RATIO_STANDARD) == 1; }
     }
 
-    private void levelUp()
+    public void levelUp()
     {
         level++;
-        Attack newAttack = getNewAttacks();
+        List<Attack> newAttacks = Utils.getValuesFromMap(pokemonData.levelAttacks, level);
+        // TODO: Ask if he wants to change the attacks
         calculateAtributes();
-    }
-
-    private Attack getNewAttacks()
-    {
-        Collection<Integer> levelAttacks = pokemonData.levelAttacks.values();
-        if (levelAttacks.contains(level))
-        {
-            // TODO: Get the attacks on one level.
-        }
-        return null;
     }
 
     // TODO: Fix this when the method is refactored.

@@ -7,6 +7,9 @@ import data.attack.AttackTarget;
 import entity.Pokemon;
 import other.Utils;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Testing
 {
     public static void main(String[] args)
@@ -22,6 +25,8 @@ public class Testing
             else countFalse++;
         }
 
+        System.out.println(Utils.separateNumberWithDots(100000000));
+
         System.out.println("true: " + countTrue);
         System.out.println("false: " + countFalse);
 
@@ -29,9 +34,15 @@ public class Testing
 
         Battle battle = new Battle();
 
-        PokemonData kyogre = new PokemonData("Kyogre", ElementType.DRAGON, ElementType.ELECTRIC);
+        Map<Attack, Integer> kyogreAttackMap = new HashMap<>();
+        kyogreAttackMap.put(impactrueno, 11);
+
+        PokemonData kyogre = new PokemonData("Kyogre", ElementType.DRAGON, ElementType.ELECTRIC, kyogreAttackMap);
 
         System.out.println(battle.getEffectivity(impactrueno, kyogre.principalType, kyogre.secondaryType));
+
+        Pokemon kyogreIvan = new Pokemon(kyogre, 10);
+        kyogreIvan.levelUp();
 
         for (int i = 0; i < 100; i++)
         {

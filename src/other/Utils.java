@@ -1,5 +1,8 @@
 package other;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -47,10 +50,59 @@ public class Utils
 
     /**
      *
+     * @param map
+     * @param value
+     * @return
+     */
+    public static <K, V> List<K> getValuesFromMap(Map<K, V> map, V value)
+    {
+        List<K> values = new ArrayList<>();
+        for (Map.Entry<K, V> entrada : map.entrySet())
+        {
+            if (entrada.getValue().equals(value))
+            {
+                values.add(entrada.getKey());
+            }
+        }
+        return values;
+    }
+
+    /**
+     * Separates a number with dots.
      */
     public static String separateNumberWithDots(Number number)
     {
-        // TODO: Inverse for that add a dot for every three chars.
-        return "";
+        String newNumber = String.valueOf(number);
+        String numberWithDots = "";
+
+        int numberCount = 0;
+        for (int i = newNumber.length() - 1; i > 0; i--)
+        {
+            if (numberCount != 3)
+            {
+                numberWithDots += newNumber.charAt(i);
+                numberCount++;
+            }
+            else
+            {
+                numberWithDots += ".";
+                numberCount = 0;
+            }
+        }
+        numberWithDots += newNumber.charAt(0);
+
+        return invertString(numberWithDots);
+    }
+
+    public static String invertString(String originalString)
+    {
+        String newString = "";
+
+        for (int i = 0; i < originalString.length(); i++)
+        {
+            newString += originalString.charAt(originalString.length()-i-1);
+        }
+
+        return newString;
     }
 }

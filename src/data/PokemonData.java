@@ -17,7 +17,7 @@ public class PokemonData
     /// FIELDS
     // General fields
     public int pokemonNumber = 0;
-    public String name = "Missingno";
+    public String name;
     public String description;
 
     public ElementType principalType = null;
@@ -77,11 +77,12 @@ public class PokemonData
 
     /// CONSTRUCTORS
     // TODO: Remove this constructor when finish testing
-    public PokemonData(String name, ElementType principalType, ElementType secondaryType)
+    public PokemonData(String name, ElementType principalType, ElementType secondaryType, Map<Attack, Integer> levelAttacks)
     {
         this.name = name;
         this.principalType = principalType;
         this.secondaryType = secondaryType;
+        this.levelAttacks = levelAttacks;
     }
 
     /// METHODS
