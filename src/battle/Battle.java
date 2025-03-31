@@ -9,6 +9,8 @@ import data.attack.AttackCategory;
 import entity.Pokemon;
 import other.Utils;
 
+import java.util.Collections;
+
 public class Battle
 {
     /// FIELDS
@@ -58,6 +60,8 @@ public class Battle
 
     public void processTurn()
     {
+        // TODO: Each Pokémon decides their action
+
         // TODO: Check who has the attacking priority
 
         // TODO: For each Pokémon:
